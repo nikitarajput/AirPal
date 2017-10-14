@@ -8,12 +8,14 @@ public class Meetup {
     private String name;
     private String description;
     private String location;
+    private int flightNumber
     private User[] listOfUsers;
 
     public Meetup (String name, String description, String location) {
         this.name = name;
         this.description = description;
         this.location = location;
+        this.flightNumber = flightNumber;
     }
 
     public String getName() {
@@ -27,6 +29,8 @@ public class Meetup {
     public String getLocation() {
         return location;
     }
+
+    public int getFlightNumber() { return flightNumber; }
 
     public User[] getListOfUsers() {
         return listOfUsers;
@@ -42,6 +46,10 @@ public class Meetup {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setFlightNumber(int flightNumber) {
+        this.flightNumber = flightNumber;
     }
 
     public void setListOfUsers(User[] listOfUsers) {
