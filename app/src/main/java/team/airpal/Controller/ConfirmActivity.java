@@ -1,8 +1,11 @@
 package team.airpal.Controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
+import team.airpal.Model.Meetup;
 import team.airpal.R;
 
 public class ConfirmActivity extends AppCompatActivity {
@@ -13,6 +16,11 @@ public class ConfirmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm);
     }
 
+    public void toMeetups(View v){
+        startActivity(new Intent(ConfirmActivity.this, MeetupsActivity.class));
+    }
 
-
+    public void toAddJourney(View v){
+        startActivity(new Intent(ConfirmActivity.this, AddJourneyActivity.class));
+    }
 }

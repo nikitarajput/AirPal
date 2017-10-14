@@ -7,7 +7,7 @@
     tools:context="team.airpal.Controller.ConfirmActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/checkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_check_black_24dp"
@@ -16,19 +16,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="166dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="toMeetups"/>
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_clear_black_24dp"
         tools:layout_constraintTop_creator="1"
         android:layout_marginStart="57dp"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/checkButton"
+        app:layout_constraintLeft_toRightOf="@+id/checkButton"
         android:layout_marginLeft="57dp"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:onClick="toAddJourney"/>
 
 </android.support.constraint.ConstraintLayout>
