@@ -29,7 +29,7 @@ public class Meetup {
         return location;
     }
 
-    public Journey getAssociatedJourney() { return  associatedJourney; }
+    public Journey getAssociatedJourney() { return associatedJourney; }
 
     public User[] getListOfUsers() {
         return listOfUsers;
@@ -48,7 +48,7 @@ public class Meetup {
     }
 
     public void setAssociatedJourney(Journey associatedJourney) {
-        this. associatedJourney =  associatedJourney;
+        this.associatedJourney =  associatedJourney;
     }
 
     public void setListOfUsers(User[] listOfUsers) {
