@@ -35,8 +35,11 @@ public class AddJourneyActivity extends AppCompatActivity {
 
     public void toConfirmActivity(View v){
         flightNumber = flightNumberTextInput.getText().toString();
-        Journey currentJourney = new Journey(flightNumber);
         startActivity(new Intent(AddJourneyActivity.this, ConfirmActivity.class));
+    }
+
+    public void createJourney() {
+        Journey currentJourney = new Journey(flightNumber);
     }
 
     private void getFlightInfo() {
@@ -67,8 +70,7 @@ public class AddJourneyActivity extends AppCompatActivity {
     }
 
     public void toMeetups(View v){
-        AddJourneyActivity addJourney = new AddJourneyActivity();
-        addJourney.createJourney();
+        createJourney();
         startActivity(new Intent(AddJourneyActivity.this, MeetupsActivity.class));
     }
 }
