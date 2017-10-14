@@ -8,7 +8,7 @@ public class Meetup {
     private String name;
     private String description;
     private String location;
-    private int flightNumber;
+    private Journey associatedJourney;
     private User[] listOfUsers;
 
     public Meetup (String name, String description, String location) {
@@ -29,7 +29,7 @@ public class Meetup {
         return location;
     }
 
-    public int getFlightNumber() { return flightNumber; }
+    public Journey getAssociatedJourney() { return  associatedJourney; }
 
     public User[] getListOfUsers() {
         return listOfUsers;
@@ -47,8 +47,8 @@ public class Meetup {
         this.location = location;
     }
 
-    public void setFlightNumber(int flightNumber) {
-        this.flightNumber = flightNumber;
+    public void setAssociatedJourney(Journey associatedJourney) {
+        this. associatedJourney =  associatedJourney;
     }
 
     public void setListOfUsers(User[] listOfUsers) {
