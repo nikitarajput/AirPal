@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "97208384265",
+    "firebase_url": "https://airpal-d56ff.firebaseio.com",
+    "project_id": "airpal-d56ff",
+    "storage_bucket": "airpal-d56ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97208384265:android:d40be4fb00961d34",
+        "android_client_info": {
+          "package_name": "team.airpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97208384265-pljgh4crl3eq9ko7k6li53kuk184g2ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACMJELfXWhbNZLF6Sbhl09rM2VMdzIQxE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
