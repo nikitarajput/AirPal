@@ -35,11 +35,8 @@ public class AddJourneyActivity extends AppCompatActivity {
 
     public void toConfirmActivity(View v){
         flightNumber = flightNumberTextInput.getText().toString();
-        startActivity(new Intent(AddJourneyActivity.this, ConfirmActivity.class));
-    }
-
-    public void createJourney() {
         Journey currentJourney = new Journey(flightNumber);
+        startActivity(new Intent(AddJourneyActivity.this, ConfirmActivity.class));
     }
 
     private void getFlightInfo() {
