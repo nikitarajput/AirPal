@@ -19,7 +19,7 @@
         android:text="AirPal"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="55sp"
+        android:textSize="75sp"
         android:textStyle="bold"
         android:focusable="false"
         android:cursorVisible="false"
