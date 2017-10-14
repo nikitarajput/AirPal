@@ -58,7 +58,6 @@ public class AddJourneyActivity extends AppCompatActivity {
                 Log.e("TAG", error.getMessage(), error);
             }
         }){
-
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
@@ -66,7 +65,6 @@ public class AddJourneyActivity extends AppCompatActivity {
                 params.put("Authorization", "Bearer O68OqqGKNrb5EC2hEGE6YIVFGeae");
                 return params;
             }
-
         };
         mQueue.add(jsonObjectRequest);
     }

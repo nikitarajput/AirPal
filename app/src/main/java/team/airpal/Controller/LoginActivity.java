@@ -49,8 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View v) {
-        this.email.setText("skeshive@gmail.com");
-        this.password.setText("Shreya5154");
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
