@@ -27,26 +27,20 @@ import team.airpal.R;
 public class AddJourneyActivity extends AppCompatActivity {
     TextInputEditText flightNumberTextInput;
     static String flightNumber;
-    private static final String url = "http://deltaairlines-dev.apigee.net//v1/hack/flight/status?flightNumber=200&flightOriginDate=" + createDate();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_journey);
         flightNumberTextInput = (TextInputEditText) findViewById(R.id.flightNumber);
-        getFlightInfo();
-    }
-
-    public void toConfirmActivity(View v){
-        flightNumber = flightNumberTextInput.getText().toString();
-        startActivity(new Intent(AddJourneyActivity.this, ConfirmActivity.class));
     }
 
     public void createJourney() {
         Journey currentJourney = new Journey(flightNumber);
     }
 
-    private void getFlightInfo() {
+    private void getFlightInfo(String flightNumber) {
+        String url = "http://deltaairlines-dev.apigee.net//v1/hack/flight/status?flightNumber=" + flightNumber + "&flightOriginDate=" + createDate();
         RequestQueue mQueue = Volley.newRequestQueue(getApplicationContext());
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(com.android.volley.Request.Method.GET, url, "",
@@ -74,6 +68,8 @@ public class AddJourneyActivity extends AppCompatActivity {
     }
 
     public void toMeetups(View v){
+        flightNumber = flightNumberTextInput.getText().toString();
+        getFlightInfo(flightNumber);
         createJourney();
         startActivity(new Intent(AddJourneyActivity.this, MeetupsActivity.class));
     }
