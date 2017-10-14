@@ -29,6 +29,7 @@
                 android:value=".Controller.WelcomeActivity" />
         </activity>
         <activity android:name=".Controller.HomeActivity"></activity>
+        <activity android:name=".Controller.ConfirmActivity"></activity>
     </application>
 
 </manifest>
