@@ -8,7 +8,7 @@ import java.sql.Time;
 
 public class Journey {
     private int flightNumber;
-    private String depatureAirport;
+    private String departureAirport;
     private String destinationAirport;
     private Time startTime;
     private Time endTime;
@@ -22,7 +22,7 @@ public class Journey {
     }
 
     public String getDepatureAirport() {
-        return depatureAirport;
+        return departureAirport;
     }
 
     public String getDestinationAirport() {
@@ -41,12 +41,12 @@ public class Journey {
         this.flightNumber = flightNumber;
     }
 
-    public void setDepatureAirport(String depatureAirport) {
-        this.depatureAirport = depatureAirport;
+    public void setDepatureAirport(String departaureAirport) {
+        this.departureAirport = departaureAirport;
     }
 
     public void setDestinationAirport(String destinationAirport) {
-        this.depatureAirport = destinationAirport;
+        this.destinationAirport = destinationAirport;
     }
 
     public void setStartTime(Time startTime) {

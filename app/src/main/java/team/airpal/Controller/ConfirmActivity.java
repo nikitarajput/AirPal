@@ -17,6 +17,8 @@ public class ConfirmActivity extends AppCompatActivity {
     }
 
     public void toMeetups(View v){
+        AddJourneyActivity addJourney = new AddJourneyActivity();
+        addJourney.createJourney();
         startActivity(new Intent(ConfirmActivity.this, MeetupsActivity.class));
     }
 
