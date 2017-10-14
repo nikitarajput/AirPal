@@ -30,7 +30,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".Controller.HomeActivity"></activity>
+        <activity android:name=".Controller.HomeActivity" />
+        <activity android:name=".Controller.ConfirmActivity"></activity>
     </application>
 
 </manifest>
