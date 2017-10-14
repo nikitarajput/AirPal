@@ -40,9 +40,6 @@
             android:name=".Controller.AddJourneyActivity"
             android:parentActivityName=".Controller.HomeActivity"></activity>
         <activity
-            android:name=".Controller.ConfirmActivity"
-            android:parentActivityName=".Controller.AddJourneyActivity"></activity>
-        <activity
             android:name=".Controller.MeetupsActivity"
             android:parentActivityName=".Controller.AddJourneyActivity"></activity>
         <activity
