@@ -26,6 +26,6 @@ public class AddJourneyActivity extends AppCompatActivity {
     }
 
     public void createJourney() {
-        Journey currentJourney = new Journey(Integer.parseInt(flightNumber));
+        Journey currentJourney = new Journey(flightNumber);
     }
 }

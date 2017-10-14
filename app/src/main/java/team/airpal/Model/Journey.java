@@ -7,17 +7,17 @@ import java.sql.Time;
  */
 
 public class Journey {
-    private int flightNumber;
+    private String flightNumber;
     private String departureAirport;
     private String destinationAirport;
     private Time startTime;
     private Time endTime;
 
-    public Journey(int flightNumber) {
+    public Journey(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
@@ -37,7 +37,7 @@ public class Journey {
         return endTime;
     }
 
-    public void setFlightNumber(int flightNumber) {
+    public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 
