@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import team.airpal.Model.Journey;
+import team.airpal.Model.Meetup;
 import team.airpal.R;
 
 public class AddJourneyActivity extends AppCompatActivity {
@@ -68,5 +69,11 @@ public class AddJourneyActivity extends AppCompatActivity {
 
         };
         mQueue.add(jsonObjectRequest);
+    }
+
+    public void toMeetups(View v){
+        AddJourneyActivity addJourney = new AddJourneyActivity();
+        addJourney.createJourney();
+        startActivity(new Intent(AddJourneyActivity.this, MeetupsActivity.class));
     }
 }
