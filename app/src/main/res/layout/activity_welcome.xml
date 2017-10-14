@@ -14,16 +14,4 @@
         tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="268dp" />
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="AirPal"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="128dp" />
-
 </android.support.constraint.ConstraintLayout>
