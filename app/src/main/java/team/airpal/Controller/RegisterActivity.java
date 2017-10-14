@@ -12,8 +12,8 @@ import team.airpal.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText username, password;
-    private static final String TAG = "EmailPasswordLogIn";
+    EditText name, age, username, password;
+    private static final String TAG = "Register";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
