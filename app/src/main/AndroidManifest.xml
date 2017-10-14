@@ -35,7 +35,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Controller.LoginActivity" />
         </activity>
-        <activity android:name=".Controller.HomeActivity"></activity>
+        <activity
+            android:name=".Controller.HomeActivity"
+            android:parentActivityName=".Controller.RegisterActivity"></activity>
         <activity android:name=".Controller.ConfirmActivity"></activity>
     </application>
 
