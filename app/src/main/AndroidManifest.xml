@@ -44,6 +44,9 @@
         <activity
             android:name=".Controller.MeetupsActivity"
             android:parentActivityName=".Controller.ConfirmActivity"></activity>
+        <activity
+            android:name=".Controller.CreateMeetupActivity"
+            android:parentActivityName=".Controller.MeetupsActivity"></activity>
     </application>
 
 </manifest>
