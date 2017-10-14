@@ -8,14 +8,13 @@ public class Meetup {
     private String name;
     private String description;
     private String location;
-    private int flightNumber
+    private int flightNumber;
     private User[] listOfUsers;
 
     public Meetup (String name, String description, String location) {
         this.name = name;
         this.description = description;
         this.location = location;
-        this.flightNumber = flightNumber;
     }
 
     public String getName() {
