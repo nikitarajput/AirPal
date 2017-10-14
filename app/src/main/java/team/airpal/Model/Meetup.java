@@ -54,4 +54,10 @@ public class Meetup {
     public void setListOfUsers(User[] listOfUsers) {
         this.listOfUsers = listOfUsers;
     }
+
+    public String flightInfo() {
+        return "From " + associatedJourney.getDepatureAirport() + " To "
+                + associatedJourney.getDestinationAirport() + " (DL"
+                + associatedJourney.getFlightNumber() + ")";
+    }
 }
