@@ -21,6 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
     }
 
+    public void toHomeActivity(View view){
+        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+    }
 
 }
 
