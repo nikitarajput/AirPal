@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "97208384265-oq778gn08tckg9daftl1h69b9dohr969.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "team.airpal",
+            "certificate_hash": "bfb79e8f1407ef98ef79f17738b7ed5851b1f910"
+          }
+        },
+        {
           "client_id": "97208384265-pljgh4crl3eq9ko7k6li53kuk184g2ic.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97208384265-pljgh4crl3eq9ko7k6li53kuk184g2ic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
