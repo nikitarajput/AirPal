@@ -38,6 +38,9 @@
         <activity
             android:name=".Controller.HomeActivity"
             android:parentActivityName=".Controller.RegisterActivity"></activity>
+        <activity
+            android:name=".Controller.AddJourneyActivity"
+            android:parentActivityName=".Controller.HomeActivity"></activity>
         <activity android:name=".Controller.ConfirmActivity"></activity>
     </application>
 
