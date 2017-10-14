@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        email = (EditText)findViewById(R.id.email);
-        password = (EditText)findViewById(R.id.password);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -49,7 +49,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View v) {
-        mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+        this.email.setText("skeshive@gmail.com");
+        this.password.setText("Shreya5154");
+        String email = this.email.getText().toString();
+        String password = this.password.getText().toString();
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -66,8 +70,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    public void toRegisterActivity(View view){
+    public void toRegisterActivity(View view) {
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 
