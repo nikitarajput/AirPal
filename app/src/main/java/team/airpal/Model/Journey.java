@@ -10,8 +10,8 @@ public class Journey {
     private String flightNumber;
     private String departureAirport;
     private String destinationAirport;
-    private Time startTime;
-    private Time endTime;
+    private String startTime;
+    private String endTime;
 
     public Journey(String flightNumber) {
         this.flightNumber = flightNumber;
@@ -29,11 +29,11 @@ public class Journey {
         return destinationAirport;
     }
 
-    public Time getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public Time getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
@@ -49,11 +49,11 @@ public class Journey {
         this.destinationAirport = destinationAirport;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public void setEndTime(Time endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 }

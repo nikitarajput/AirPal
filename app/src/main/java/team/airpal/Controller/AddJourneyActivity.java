@@ -33,6 +33,7 @@ import team.airpal.R;
 
 public class AddJourneyActivity extends AppCompatActivity {
     TextInputEditText flightNumberTextInput;
+    private Journey currentJourney;
     static String flightNumber;
 
     @Override
@@ -43,7 +44,7 @@ public class AddJourneyActivity extends AppCompatActivity {
     }
 
     public void createJourney() {
-        Journey currentJourney = new Journey(flightNumber);
+        currentJourney = new Journey(flightNumber);
     }
 
     private void getFlightInfo(String flightNumber) {
@@ -119,6 +120,9 @@ public class AddJourneyActivity extends AppCompatActivity {
                 System.out.println("Parsing error.");
             }
         }
+        currentJourney.setDepatureAirport(departureAirportCode);
+        currentJourney.setDestinationAirport(arrivalAirportCode);
+        currentJourney.setEndTime(arrivalTime);
         System.out.println(departureAirportCode + " " + departureTime + " to " + arrivalAirportCode + " " + arrivalTime);
     }
 
