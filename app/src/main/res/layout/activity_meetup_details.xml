@@ -52,19 +52,25 @@
         android:layout_below="@+id/meetupLocation"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/meetingUsers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/meetupDescription"
-        android:layout_marginTop="17dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Attending:"
-        android:textAlignment="textStart"
-        android:textSize="18sp" />
+        <Button
+            android:id="@+id/joinButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOIN" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/meetingUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/meetupDescription"
+            android:layout_marginTop="17dp"
+            android:background="@null"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Attending:"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 </ScrollView>
