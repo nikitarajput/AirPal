@@ -86,8 +86,8 @@ public class AddJourneyActivity extends AppCompatActivity {
     public void parseData(JSONObject data) {
         String departureAirportCode = "";
         String arrivalAirportCode = "";
-        String departureTime = null;
-        String arrivalTime = null;
+        String departureTime = "";
+        String arrivalTime = "";
         JSONArray flightDetails = new JSONArray();
         try {
             flightDetails = data.getJSONObject("flightStatusResponse").getJSONObject("statusResponse").getJSONObject("flightStatusTO").getJSONArray("flightStatusLegTOList");
@@ -98,8 +98,8 @@ public class AddJourneyActivity extends AppCompatActivity {
         for (int i = 0; i < flightDetails.length(); i++)
         {
             try {
-                departureAirportCode = flightDetails.getJSONObject(0).getString("departureAirportCode");
-                arrivalAirportCode = flightDetails.getJSONObject(0).getString("arrivalAirportCode");
+                departureAirportCode = flightDetails.getJSONObject(i).getString("departureAirportCode");
+                arrivalAirportCode = flightDetails.getJSONObject(i).getString("arrivalAirportCode");
                 String depart = flightDetails.getJSONObject(0).getString("departureLocalTimeScheduled");
                 String arrive = flightDetails.getJSONObject(0).getString("arrivalLocalTimeEstimatedActual");
                 try {
