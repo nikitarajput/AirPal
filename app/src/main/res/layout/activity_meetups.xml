@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/addMeetup"
-        android:text="From ATL to PHL (DL813)"
+        android:text="From ATL to JNB (DAL200)"
         android:textSize="20sp" />
 
 </RelativeLayout>
