@@ -131,4 +131,8 @@ public class AddJourneyActivity extends AppCompatActivity {
         SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
         return timeFormat.format(calendar.getTime());
     }
+
+    public Journey getCurrentJourney() {
+        return currentJourney;
+    }
 }
