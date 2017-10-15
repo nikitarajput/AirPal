@@ -3,7 +3,7 @@ created at HackGT4
 ## Background
 As out-of-state students and frequent flyers one of our biggest pain points is having to spend large amounts of time at airports alone. 
 We created this application to promote in person interactions and communication between individuals traveling to similar destinations. 
-Whether its networking before a large conference or befriending another student, our application provides the means to connect with a 
+Whether its networking before a large conference or befriending another student, our application provides the means to connect with other flyers.
 
 ## About
 After registration, users simply input their flight number to begin their journey after which they are redirected to a page of active meet ups based on their flight information. 
