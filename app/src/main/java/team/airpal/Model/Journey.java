@@ -41,7 +41,7 @@ public class Journey {
         this.flightNumber = flightNumber;
     }
 
-    public void setDepatureAirport(String departaureAirport) {
+    public void setDepartureAirport(String departaureAirport) {
         this.departureAirport = departaureAirport;
     }
 

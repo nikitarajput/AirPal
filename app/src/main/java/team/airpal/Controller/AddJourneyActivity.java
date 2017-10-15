@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
@@ -13,6 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -32,6 +36,7 @@ import team.airpal.Model.Journey;
 import team.airpal.R;
 
 public class AddJourneyActivity extends AppCompatActivity {
+
     TextInputEditText flightNumberTextInput;
     private Journey currentJourney;
     static String flightNumber;
@@ -45,6 +50,8 @@ public class AddJourneyActivity extends AppCompatActivity {
 
     public void createJourney() {
         currentJourney = new Journey(flightNumber);
+        Toast.makeText(AddJourneyActivity.this, "Journey created!.",
+                Toast.LENGTH_SHORT).show();
     }
 
     private void getFlightInfo(String flightNumber) {
@@ -80,7 +87,6 @@ public class AddJourneyActivity extends AppCompatActivity {
     public void toMeetups(View v){
         flightNumber = flightNumberTextInput.getText().toString();
         getFlightInfo(flightNumber);
-        createJourney();
         startActivity(new Intent(AddJourneyActivity.this, MeetupsActivity.class));
     }
 
@@ -94,7 +100,8 @@ public class AddJourneyActivity extends AppCompatActivity {
             flightDetails = data.getJSONObject("flightStatusResponse").getJSONObject("statusResponse").getJSONObject("flightStatusTO").getJSONArray("flightStatusLegTOList");
         }
         catch (JSONException e) {
-            System.out.println("Parsing error.");
+            Toast.makeText(AddJourneyActivity.this, "Journey could not be added.",
+                    Toast.LENGTH_SHORT).show();
         }
         for (int i = 0; i < flightDetails.length(); i++)
         {
@@ -113,26 +120,25 @@ public class AddJourneyActivity extends AppCompatActivity {
                     DateFormat newArriveFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm");
                     arrivalTime = newArriveFormat.format(arrivalDate);
                 } catch (ParseException e) {
-                    System.out.println("Date creation error.");
+                    Toast.makeText(AddJourneyActivity.this, "Journey could not be added.",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
             catch (JSONException e) {
-                System.out.println("Parsing error.");
+                Toast.makeText(AddJourneyActivity.this, "Journey could not be added.",
+                        Toast.LENGTH_SHORT).show();
             }
         }
-        currentJourney.setDepatureAirport(departureAirportCode);
+        System.out.println(departureAirportCode + " " + departureTime + " to " + arrivalAirportCode + " " + arrivalTime);
+        createJourney();
+        currentJourney.setDepartureAirport(departureAirportCode);
         currentJourney.setDestinationAirport(arrivalAirportCode);
         currentJourney.setEndTime(arrivalTime);
-        System.out.println(departureAirportCode + " " + departureTime + " to " + arrivalAirportCode + " " + arrivalTime);
     }
 
     private static String createDate() {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
         return timeFormat.format(calendar.getTime());
-    }
-
-    public Journey getCurrentJourney() {
-        return currentJourney;
     }
 }
