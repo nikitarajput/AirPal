@@ -9,6 +9,7 @@ public class User {
     private String email;
     private String password;
     private int age;
+    private String flightId;
 
     public User(String name, String email, String password, int age) {
         this.name = name;
@@ -33,6 +34,8 @@ public class User {
         return age;
     }
 
+    public String getUserFlightId() {return flightId;}
+
     public void setName(String name) {
         this.name = name;
     }
@@ -48,6 +51,8 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public void setUserFlightId(String flightId) {this.flightId = flightId;}
 
     @Override
     public String toString() {
