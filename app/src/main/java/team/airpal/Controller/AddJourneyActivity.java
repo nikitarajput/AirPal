@@ -13,11 +13,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,6 +55,8 @@ public class AddJourneyActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("TAG", response.toString());
+                        JSONObject flightDetails = response;
+                        parseData(flightDetails);
                     }
                 }, new Response.ErrorListener() {
 
@@ -72,6 +81,45 @@ public class AddJourneyActivity extends AppCompatActivity {
         getFlightInfo(flightNumber);
         createJourney();
         startActivity(new Intent(AddJourneyActivity.this, MeetupsActivity.class));
+    }
+
+    public void parseData(JSONObject data) {
+        String departureAirportCode = "";
+        String arrivalAirportCode = "";
+        String departureTime = null;
+        String arrivalTime = null;
+        JSONArray flightDetails = new JSONArray();
+        try {
+            flightDetails = data.getJSONObject("flightStatusResponse").getJSONObject("statusResponse").getJSONObject("flightStatusTO").getJSONArray("flightStatusLegTOList");
+        }
+        catch (JSONException e) {
+            System.out.println("Parsing error.");
+        }
+        for (int i = 0; i < flightDetails.length(); i++)
+        {
+            try {
+                departureAirportCode = flightDetails.getJSONObject(0).getString("departureAirportCode");
+                arrivalAirportCode = flightDetails.getJSONObject(0).getString("arrivalAirportCode");
+                String depart = flightDetails.getJSONObject(0).getString("departureLocalTimeScheduled");
+                String arrive = flightDetails.getJSONObject(0).getString("arrivalLocalTimeEstimatedActual");
+                try {
+                    DateFormat oldDepartFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                    Date departureDate = oldDepartFormat.parse(depart);
+                    DateFormat newDepartFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+                    departureTime = newDepartFormat.format(departureDate);
+                    DateFormat oldArriveFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+                    Date arrivalDate = oldArriveFormat.parse(arrive);
+                    DateFormat newArriveFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+                    arrivalTime = newArriveFormat.format(arrivalDate);
+                } catch (ParseException e) {
+                    System.out.println("Date creation error.");
+                }
+            }
+            catch (JSONException e) {
+                System.out.println("Parsing error.");
+            }
+        }
+        System.out.println(departureAirportCode + " " + departureTime + " to " + arrivalAirportCode + " " + arrivalTime);
     }
 
     private static String createDate() {
